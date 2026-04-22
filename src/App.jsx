@@ -6,8 +6,6 @@ import './App.css'
 import ImageAnnotator from './ImageAnnotator'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <ImageAnnotator />
