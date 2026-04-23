@@ -144,6 +144,7 @@
     cursor: pointer;
     transition: transform 0.1s, border-color 0.1s;
     position: relative;
+    overflow: hidden;
 }
 
 .colorDot:hover {
@@ -155,10 +156,8 @@
     transform: scale(1.1);
 }
 
-/* Transparent fill indicator — diagonal red line */
 .colorTransparent {
-    background: #2a2a30 !important;
-    overflow: hidden;
+    background: #1e1e24 !important;
 }
 
 .colorTransparent::after {
@@ -166,9 +165,7 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom right,
-            transparent 44%,
-            #f87171 44% 56%,
-            transparent 56%);
+            transparent 43%, #f87171 43% 57%, transparent 57%);
 }
 
 /* ─── Slider ───────────────────────────────────── */
@@ -296,7 +293,6 @@
     box-shadow: inset 0 0 0 3px #5e5ef7;
 }
 
-/* Empty state */
 .empty {
     display: flex;
     flex-direction: column;
@@ -318,7 +314,6 @@
     margin: 0;
 }
 
-/* Drop overlay */
 .dropOverlay {
     position: absolute;
     inset: 0;
@@ -377,7 +372,6 @@
     color: #777;
     border-radius: 10px;
     padding: 1px 7px;
-    letter-spacing: 0.04em;
 }
 
 .addBtn {
@@ -387,7 +381,6 @@
     font-family: inherit;
     font-size: 11px;
     font-weight: 500;
-    letter-spacing: 0.04em;
     color: #ccc;
     background: #22222a;
     border: 1px solid #3a3a44;
@@ -404,7 +397,6 @@
     color: #fff;
 }
 
-/* Scrollable list */
 .panelList {
     flex: 1;
     overflow-y: auto;
@@ -433,7 +425,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 36px 12px;
+    padding: 32px 12px;
     color: #333;
     text-align: center;
 }
@@ -474,7 +466,6 @@
     border-color: #5e5ef7 !important;
 }
 
-/* FIX #2: Serial number */
 .cardSerial {
     font-size: 9px;
     color: #444;
@@ -512,12 +503,10 @@
     font-weight: 700;
     border-radius: 8px;
     padding: 1px 4px;
-    letter-spacing: 0.02em;
     line-height: 1.5;
     pointer-events: none;
 }
 
-/* FIX #2: name + path */
 .cardInfo {
     display: flex;
     flex-direction: column;
@@ -532,7 +521,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    letter-spacing: 0.02em;
 }
 
 .cardPath {
@@ -541,7 +529,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    letter-spacing: 0.02em;
 }
 
 .imageCardActive .cardName {
