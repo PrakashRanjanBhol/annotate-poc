@@ -1,5 +1,4 @@
 /* ImageAnnotator.module.css */
-
 .root {
     display: flex;
     height: 100vh;
@@ -10,8 +9,7 @@
     color: #e2e2e2;
 }
 
-/* ─── Left Sidebar ─────────────────────────────── */
-
+/* ─── Sidebar ── */
 .sidebar {
     width: 200px;
     min-width: 200px;
@@ -50,7 +48,7 @@
 .logoMark {
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: .16em;
     color: #5e5ef7;
     margin-bottom: 14px;
 }
@@ -67,7 +65,7 @@
 
 .groupLabel {
     font-size: 9px;
-    letter-spacing: 0.12em;
+    letter-spacing: .12em;
     text-transform: uppercase;
     color: #555;
     display: block;
@@ -92,7 +90,7 @@
     border-radius: 5px;
     padding: 5px 7px;
     cursor: pointer;
-    transition: color 0.1s, background 0.1s, border-color 0.1s;
+    transition: color .1s, background .1s, border-color .1s;
     text-align: left;
 }
 
@@ -123,11 +121,10 @@
 .toolLabel {
     font-size: 11px;
     text-transform: capitalize;
-    letter-spacing: 0.02em;
+    letter-spacing: .02em;
 }
 
-/* ─── Colors ───────────────────────────────────── */
-
+/* ─── Colors ── */
 .colorGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -142,7 +139,7 @@
     background: var(--dot-color);
     border: 2px solid transparent;
     cursor: pointer;
-    transition: transform 0.1s, border-color 0.1s;
+    transition: transform .1s, border-color .1s;
     position: relative;
     overflow: hidden;
 }
@@ -164,12 +161,10 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom right,
-            transparent 43%, #f87171 43% 57%, transparent 57%);
+    background: linear-gradient(to bottom right, transparent 43%, #f87171 43% 57%, transparent 57%);
 }
 
-/* ─── Slider ───────────────────────────────────── */
-
+/* ─── Slider ── */
 .slider {
     -webkit-appearance: none;
     appearance: none;
@@ -201,8 +196,7 @@
     border: 2px solid #18181c;
 }
 
-/* ─── Zoom ─────────────────────────────────────── */
-
+/* ─── Zoom ── */
 .zoomRow {
     display: flex;
     gap: 4px;
@@ -220,7 +214,7 @@
     border-radius: 5px;
     padding: 4px 0;
     cursor: pointer;
-    transition: background 0.1s, border-color 0.1s;
+    transition: background .1s, border-color .1s;
 }
 
 .zoomBtn:hover {
@@ -229,8 +223,7 @@
     color: #fff;
 }
 
-/* ─── History ──────────────────────────────────── */
-
+/* ─── History ── */
 .historyRow {
     display: flex;
     gap: 5px;
@@ -247,7 +240,7 @@
     padding: 6px;
     cursor: pointer;
     color: #999;
-    transition: all 0.1s;
+    transition: all .1s;
 }
 
 .histBtn:hover:not(:disabled) {
@@ -257,7 +250,7 @@
 }
 
 .histBtn:disabled {
-    opacity: 0.28;
+    opacity: .28;
     cursor: not-allowed;
 }
 
@@ -270,23 +263,20 @@
 .hint {
     font-size: 9px;
     color: #3a3a3a;
-    letter-spacing: 0.03em;
+    letter-spacing: .03em;
     line-height: 1.5;
     text-align: center;
 }
 
-/* ─── Canvas area ──────────────────────────────── */
-
+/* ─── Canvas ── */
 .canvas {
     flex: 1;
     overflow: hidden;
     position: relative;
     background-color: #0f0f11;
-    background-image:
-        linear-gradient(#1c1c22 1px, transparent 1px),
-        linear-gradient(90deg, #1c1c22 1px, transparent 1px);
+    background-image: linear-gradient(#1c1c22 1px, transparent 1px), linear-gradient(90deg, #1c1c22 1px, transparent 1px);
     background-size: 28px 28px;
-    transition: box-shadow 0.15s;
+    transition: box-shadow .15s;
 }
 
 .canvas.canvasDragOver {
@@ -308,7 +298,7 @@
 
 .empty p {
     font-size: 11px;
-    letter-spacing: 0.04em;
+    letter-spacing: .04em;
     line-height: 1.7;
     text-align: center;
     margin: 0;
@@ -317,7 +307,7 @@
 .dropOverlay {
     position: absolute;
     inset: 0;
-    background: rgba(15, 15, 17, 0.82);
+    background: rgba(15, 15, 17, .82);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -332,14 +322,13 @@
     gap: 12px;
     color: #5e5ef7;
     font-size: 12px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     border: 1.5px dashed #5e5ef7;
     border-radius: 10px;
     padding: 28px 44px;
 }
 
-/* ─── Right Panel ──────────────────────────────── */
-
+/* ─── Right Panel ── */
 .panel {
     width: 240px;
     min-width: 240px;
@@ -361,7 +350,7 @@
 .panelTitle {
     font-size: 9px;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: .14em;
     text-transform: uppercase;
     color: #555;
 }
@@ -388,7 +377,7 @@
     padding: 6px 10px;
     cursor: pointer;
     margin: 2px 10px 8px;
-    transition: background 0.12s, border-color 0.12s;
+    transition: background .12s, border-color .12s;
 }
 
 .addBtn:hover {
@@ -436,8 +425,7 @@
     margin: 0;
 }
 
-/* ─── Image Card ───────────────────────────────── */
-
+/* ─── Image Card ── */
 .imageCard {
     display: flex;
     align-items: center;
@@ -447,7 +435,7 @@
     border: 1px solid transparent;
     cursor: grab;
     position: relative;
-    transition: background 0.1s, border-color 0.1s;
+    transition: background .1s, border-color .1s;
     user-select: none;
     min-width: 0;
 }
@@ -553,7 +541,7 @@
     border-radius: 3px;
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.1s, color 0.1s;
+    transition: opacity .1s, color .1s;
     padding: 0;
 }
 
@@ -565,8 +553,7 @@
     color: #f87171;
 }
 
-/* ─── Footer ───────────────────────────────────── */
-
+/* ─── Footer ── */
 .panelFooter {
     border-top: 1px solid #2a2a30;
     padding: 8px 12px 12px;
@@ -586,7 +573,7 @@
 .footerLabel {
     font-size: 9px;
     color: #444;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     flex-shrink: 0;
 }
