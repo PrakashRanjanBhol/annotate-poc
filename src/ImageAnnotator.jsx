@@ -7,18 +7,16 @@
  *
  * 2. The image to annotate is supplied via the `image` prop:
  *      <ImageAnnotator image={{
- *          datasetId: "1",
- *          Image: {
- *              datatype:           "Base",
- *              filename:           "file2.png",
- *              id:                 "something",
- *              originalClassName:  "something",
- *              predictionScore:    0.1,
- *              split:              "something",
- *              suggestedLabel:     "Something" | null,
- *              url:                "http://imagepath" | "data:image/png;base64,..." | raw base64,
- *              userLabel:          "Something" | null,
- *          }
+ *          datasetId:          "1",
+ *          datatype:           "Base",
+ *          filename:           "file2.png",
+ *          id:                 "something",
+ *          originalClassName:  "something",
+ *          predictionScore:    0.1,
+ *          split:              "something",
+ *          suggestedLabel:     "Something" | null,
+ *          url:                "http://imagepath" | "data:image/png;base64,..." | raw base64,
+ *          userLabel:          "Something" | null,
  *      }} />
  *
  *    The `url` field can be:
@@ -1193,14 +1191,13 @@ const ImageAnnotator = forwardRef(({ image }, ref) => {
 
     /* ── Load the image whenever the prop changes ── */
     useEffect(() => {
-        if (!image?.Image?.url) {
+        if (!image?.url) {
             setImageRecord(null);
             setLoadError(null);
             return;
         }
         let cancelled = false;
-        const { url, filename = "image", id: externalId } = image.Image;
-        const datasetId = image.datasetId ?? null;
+        const { url, filename = "image", id: externalId, datasetId = null } = image;
 
         setLoading(true);
         setLoadError(null);
@@ -1239,7 +1236,7 @@ const ImageAnnotator = forwardRef(({ image }, ref) => {
         // deps — they're refs/setters or derived from prop. We only want this
         // to re-run when the prop's url/id changes.
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [image?.Image?.url, image?.Image?.id, image?.datasetId]);
+    }, [image?.url, image?.id, image?.datasetId]);
 
     /* ── loadAnnotations (parent can call via ref to restore from API) ── */
     const loadAnnotations = useCallback((imagePayload) => {
